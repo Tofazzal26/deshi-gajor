@@ -1,9 +1,10 @@
+import Banner from "@/Components/Banner/page";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <h2 className="text-4xl">Deshi Gajor</h2>
+    <div className="">
+      <Banner />
     </div>
   );
 }

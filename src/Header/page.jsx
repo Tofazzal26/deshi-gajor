@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="bg-[#03211b] text-white py-2">
+    <div className="bg-[#03211b] text-white py-2 border-b-[1px] border-[#1c3020]">
       <div className="container mx-auto">
         <div>
           <div className="navbar">
