@@ -21,7 +21,7 @@ const Banner = () => {
                 confusing. That’s why we created a platform where real people
                 share real experiences — helping you make smarter decisions.
               </p>
-              <div className="flex items-center gap-6 mt-3 lg:mt-7">
+              <div className="flex items-center gap-3 lg:gap-6 mt-3 lg:mt-7">
                 <button className="flex items-center gap-2 rounded-full px-6 lg:px-8 py-[12px] lg:py-[14px] cursor-pointer  bg-[#074c3e] ">
                   Search Company <Search size={18} />{" "}
                 </button>
