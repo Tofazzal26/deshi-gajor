@@ -1,6 +1,7 @@
 import Banner from "@/Components/Banner/page";
 import HowWorks from "@/HowWorks/page";
 import LatestReview from "@/LatestReview/page";
+import Testimonial from "@/Testimonial/page";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Banner />
       <HowWorks />
       <LatestReview />
+      <Testimonial />
     </div>
   );
 }

@@ -36,7 +36,7 @@ const LatestReview = () => {
                     <h2 className=" text-gray-500 text-sm">2025-04-27</h2>
                   </div>
                   <div>
-                    <p className="text-gray-600 my-4 text-lg leading-[30px] h-full lg:h-[440px]">
+                    <p className="text-gray-600 my-4 text-sm lg:text-lg leading-[30px] h-full lg:h-[440px]">
                       As a PHP developer with over 3 years of experience, I've
                       had the opportunity to collaborate with various clients
                       and organizations, but my recent experience with this
@@ -86,7 +86,7 @@ const LatestReview = () => {
                     <h2 className=" text-gray-500 text-sm">2025-02-05</h2>
                   </div>
                   <div>
-                    <p className="text-gray-600 my-4 text-lg leading-[30px]">
+                    <p className="text-gray-600 my-4 text-sm lg:text-lg leading-[30px]">
                       As a graphic designer, it’s always a pleasure to work with
                       clients who know what they want. Their brief was clear,
                       feedback was constructive, and they trusted my creative
@@ -124,7 +124,7 @@ const LatestReview = () => {
                     <h2 className=" text-gray-500 text-sm">2025-03-12</h2>
                   </div>
                   <div>
-                    <p className="text-gray-600 my-4 text-lg leading-[30px]">
+                    <p className="text-gray-600 my-4 text-sm lg:text-lg leading-[30px]">
                       Lack of clear goals and delayed communication made the
                       project frustrating. Revisions kept changing direction,
                       wasting time and effort. Would think twice before working
@@ -162,7 +162,7 @@ const LatestReview = () => {
                     <h2 className=" text-gray-500 text-sm">2025-01-18</h2>
                   </div>
                   <div>
-                    <p className="text-gray-600 my-4 text-lg leading-[30px]">
+                    <p className="text-gray-600 my-4 text-sm lg:text-lg leading-[30px]">
                       Poorly defined requirements and frequent scope changes
                       made the project chaotic. Communication gaps slowed
                       progress, and technical decisions were often overridden
@@ -200,7 +200,7 @@ const LatestReview = () => {
                     <h2 className=" text-gray-500 text-sm">2024-11-24</h2>
                   </div>
                   <div>
-                    <p className="text-gray-600 my-4 text-lg leading-[30px]">
+                    <p className="text-gray-600 my-4 text-sm lg:text-lg leading-[30px]">
                       Security best practices were often ignored despite
                       repeated recommendations. Sensitive data handling was
                       careless, and there was little interest in fixing
