@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.howCardShadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 :root {
   --primary: #ffb25a;
   --secondary: #4caf50;
