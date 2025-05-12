@@ -16,7 +16,7 @@ const Footer = () => {
     <div className="bg-[#03211b]">
       <div className="container mx-auto">
         <div className="py-[80px] lg:py-[100px] lg:px-0 px-2">
-          <div className="flex lg:flex-row flex-col justify-between">
+          <div className="flex lg:flex-row lg:gap-0 gap-4 flex-col justify-between">
             <div>
               <div className="flex items-center text-white gap-1 text-[22px] lg:text-[32px]">
                 <Image
