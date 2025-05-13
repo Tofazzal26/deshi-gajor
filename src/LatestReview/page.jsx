@@ -9,7 +9,7 @@ const LatestReview = () => {
   const [rating, setRating] = useState(5);
   return (
     <div className="container mx-auto">
-      <div className="py-10 lg:px-0 px-2">
+      <div className="py-5 lg:py-10 lg:px-0 px-2">
         <div>
           <CommonHeadline
             title={"Latest Reviews"}

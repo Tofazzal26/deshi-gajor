@@ -8,7 +8,7 @@ const Testimonial = () => {
   const [rating, setRating] = useState(5);
   return (
     <div className="container mx-auto">
-      <div className="my-8 lg:my-16 lg:px-0 px-2">
+      <div className="my-6 lg:my-16 lg:px-0 px-2">
         <div>
           <div className="grid grid-cols-1 lg:grid-cols-6 items-center">
             <div className="lg:col-span-3">

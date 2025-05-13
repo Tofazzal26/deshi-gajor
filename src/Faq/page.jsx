@@ -38,7 +38,7 @@ const Faq = () => {
             paragraph={"Answers to common questions about using our platform."}
           />
         </div>
-        <div className="max-w-4xl mx-auto my-10 space-y-4">
+        <div className="max-w-4xl mx-auto my-5 lg:my-10 space-y-4">
           {faqs.map((item, index) => (
             <div
               key={index}

@@ -6,7 +6,7 @@ const HowWorks = () => {
   return (
     <div className="container mx-auto">
       <div className="lg:px-0 px-2">
-        <div className="mb-8">
+        <div className="mb-4 lg:mb-8">
           <CommonHeadline
             title={"How it Works"}
             paragraph={"Understand the process in just a few simple steps."}
