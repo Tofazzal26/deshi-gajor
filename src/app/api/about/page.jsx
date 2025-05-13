@@ -98,7 +98,7 @@ const About = () => {
                   encourages businesses to improve. Our platform is built to
                   amplify real voices in a sea of paid marketing.
                 </p>
-                <button className="bg-transparent border-[2px] border-[#ffb25a] text-[#ffb25a]  px-6 lg:px-10 py-[10px] lg:py-[12px] cursor-pointer">
+                <button className="bg-transparent border-[2px] border-[#074c3e] text-[#074c3e]  px-6 lg:px-10 py-[10px] lg:py-[12px] cursor-pointer">
                   Read More
                 </button>
               </div>
