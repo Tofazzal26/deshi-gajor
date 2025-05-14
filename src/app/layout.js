@@ -2,7 +2,10 @@ import { Rajdhani } from "next/font/google";
 import "./globals.css";
 import Header from "@/Header/page";
 import Footer from "@/Footer/page";
-
+import ProviderQuery from "./ProviderQuery";
+import DeshiProvider from "@/DeshiProvider/DeshiProvider";
+import AuthProvider from "@/AuthProvider/AuthProvider";
+import { Toaster } from "react-hot-toast";
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: "600" });
 
 export const metadata = {
@@ -14,9 +17,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body className={`${rajdhani.className}`}>
-        <Header />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <DeshiProvider>
+            <ProviderQuery>
+              <Header />
+              {children}
+              <Footer />
+            </ProviderQuery>
+            <Toaster />
+          </DeshiProvider>
+        </AuthProvider>
       </body>
     </html>
   );

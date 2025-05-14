@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React from "react";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 const Header = () => {
-  const router = useRouter();
   const path = usePathname();
+  const session = useSession();
   return (
     <div className="bg-[#03211b] text-white py-2 border-b-[1px] border-[#1c3020]">
       <div className="container mx-auto">
@@ -104,16 +105,58 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <button className="bg-[#074c3e] text-[17px] px-5 py-2 rounded-full">
-                      <Link
-                        href="/api/login"
-                        className={
-                          path === "/api/login" ? "text-[#ffb25a]" : ""
-                        }
-                      >
-                        Login
-                      </Link>
-                    </button>
+                    {session?.status === "authenticated" ? (
+                      <div className="dropdown dropdown-end text-black ">
+                        <div
+                          tabIndex={0}
+                          role="button"
+                          className="btn btn-ghost btn-circle avatar"
+                        >
+                          <div className="w-12 rounded-full">
+                            <img
+                              alt="Tailwind CSS Navbar component"
+                              src={session?.data?.user?.image}
+                            />
+                          </div>
+                        </div>
+                        <ul
+                          tabIndex={0}
+                          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                        >
+                          <li>
+                            <a className="text-sm text-gray-600">
+                              {session?.data?.user?.name}
+                            </a>
+                          </li>
+                          <li>
+                            <a className="text-sm text-gray-600">
+                              {session?.data?.user?.email}
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              onClick={() => signOut()}
+                              className="text-sm text-red-500 cursor-pointer"
+                            >
+                              Logout
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    ) : session?.status === "loading" ? (
+                      <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#ffb25a]"></div>
+                    ) : (
+                      <button className="bg-[#074c3e] text-[17px] px-5 py-2 rounded-full">
+                        <Link
+                          href="/api/login"
+                          className={
+                            path === "/api/login" ? "text-[#ffb25a]" : ""
+                          }
+                        >
+                          Login
+                        </Link>
+                      </button>
+                    )}
                   </li>
                 </ul>
               </div>

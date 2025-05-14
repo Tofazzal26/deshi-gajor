@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-
+import { signIn } from "next-auth/react";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
@@ -13,7 +13,12 @@ const Login = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log({ email: email, password: password });
+    const resp = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+    console.log(resp);
   };
 
   return (

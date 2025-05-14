@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { signIn } from "next-auth/react";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -23,7 +24,6 @@ const Register = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log({ name, email, password, images });
     setLoginLoading(true);
     const formData = new FormData();
     if (images) {
@@ -33,43 +33,46 @@ const Register = () => {
       return;
     }
 
-    // const response = await axios.post(
-    //   "https://api.imgbb.com/1/upload",
-    //   formData,
-    //   {
-    //     params: {
-    //       key: process.env.NEXT_PUBLIC_ImageBB_API_Key,
-    //     },
-    //   }
-    // );
+    const response = await axios.post(
+      "https://api.imgbb.com/1/upload",
+      formData,
+      {
+        params: {
+          key: process.env.NEXT_PUBLIC_ImageBB_API_Key,
+        },
+      }
+    );
 
-    // const image = await response.data.data.url;
-
-    // try {
-    //   const resp = await axios.post(
-    //     `${process.env.NEXT_PUBLIC_BASE_URL}/api/User`,
-    //     {
-    //       name,
-    //       email,
-    //       password,
-    //       image,
-    //     }
-    //   );
-    //   if (resp.data.status === 200) {
-    //     const res = await signIn("credentials", {
-    //       email,
-    //       password,
-    //       redirect: false,
-    //     });
-    //     if (res.status === 200) {
-    //       route.push("/");
-    //       toast.success("Register Success");
-    //     }
-    //   }
-    //   setLoginLoading(false);
-    // } catch (error) {
-    //   // console.log(error);
-    // }
+    const image = await response.data.data.url;
+    try {
+      const resp = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/User`,
+        {
+          name,
+          email,
+          password,
+          image,
+        }
+      );
+      console.log(resp);
+      if (resp.data.status === 409) {
+        toast.error("You already have an account, please log in.");
+      }
+      if (resp.data.status === 200) {
+        const res = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+        if (res.status === 200) {
+          route.push("/");
+          toast.success("Register Success");
+        }
+      }
+      setLoginLoading(false);
+    } catch (error) {
+      // console.log(error);
+    }
   };
 
   return (
@@ -140,7 +143,7 @@ const Register = () => {
                 <Loader className="animate-spin" size={25} />
               </h2>
             ) : (
-              <button className="bg-[#074c3e] text-white text-lg w-full py-[10px] mt-4">
+              <button className="bg-[#074c3e] text-white cursor-pointer text-lg w-full py-[10px] mt-4">
                 Register
               </button>
             )}
