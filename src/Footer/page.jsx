@@ -103,7 +103,7 @@ const Footer = () => {
                   placeholder="Email Address"
                   className="bg-transparent border-[1px] border-[#0b4f41] rounded-2xl px-10 py-5 outline-none "
                 />
-                <div className="w-[70px] h-[50px] bg-[#0b4f41] absolute lg:right-[50px] lg:top-[7px] rounded-2xl flex justify-center items-center top-[7px] right-[255px]">
+                <div className="w-[70px] h-[50px] bg-[#0b4f41] absolute lg:right-[50px] lg:top-[7px] rounded-2xl flex justify-center items-center top-[7px] right-[125px]">
                   <Navigation color="#ffffff" size={25} />
                 </div>
               </div>
