@@ -25,9 +25,9 @@ const ReviewSection = () => {
             <div className="relative">
               <input
                 onChange={handleSearch}
-                className="bg-gray-100 outline-none lg:px-8 px-6 py-3 lg:py-4 rounded-none md:w-[440px] xl:w-[600px]"
+                className="bg-gray-100 outline-none text-sm lg:text-base lg:px-8 px-4 py-3 lg:py-4 rounded-none md:w-[440px] xl:w-[600px]"
                 type="text"
-                placeholder="Search by company or organization..."
+                placeholder="Search by company..."
               />
               <div className="absolute right-3 lg:right-4 cursor-pointer top-3 lg:top-4">
                 <Search className="text-gray-600" />

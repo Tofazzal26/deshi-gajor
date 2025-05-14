@@ -1,10 +1,9 @@
 import { Building, ChevronsRight, Search } from "lucide-react";
-import Image from "next/image";
 
 const ReviewCard = () => {
   return (
     <div>
-      <div className="howCardShadow p-8">
+      <div className="howCardShadow p-4 lg:p-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex justify-center items-center lg:w-[50px] w-[45px] h-[45px] lg:h-[50px] bg-gray-100 rounded-full">
