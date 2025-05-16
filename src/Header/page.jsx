@@ -187,22 +187,89 @@ const Header = () => {
                   className="menu menu-sm dropdown-content bg-base-100 text-black rounded-box z-1 mt-3 w-32 translate-x-[-80px] p-2 shadow"
                 >
                   <li>
-                    <h2 className="text-sm">Home</h2>
+                    <h2 className="text-[17px]">
+                      {" "}
+                      <Link
+                        href="/"
+                        className={path === "/" ? "text-[#ffb25a]" : ""}
+                      >
+                        Home
+                      </Link>{" "}
+                    </h2>
                   </li>
                   <li>
-                    <h2 className="text-sm">Review</h2>
+                    <h2 className="text-[17px]">
+                      <Link
+                        href="/api/review"
+                        className={
+                          path === "/api/review" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        Review
+                      </Link>
+                    </h2>
                   </li>
                   <li>
-                    <h2 className="text-sm">Israel Product</h2>
+                    <h2 className="text-[17px]">
+                      <Link
+                        href="/api/israel"
+                        className={
+                          path === "/api/israel" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        Israel Product
+                      </Link>
+                    </h2>
                   </li>
                   <li>
-                    <h2 className="text-sm">Blog</h2>
+                    <h2 className="text-[17px]">
+                      {" "}
+                      <Link
+                        href="/api/blog"
+                        className={path === "/api/blog" ? "text-[#ffb25a]" : ""}
+                      >
+                        Blog
+                      </Link>
+                    </h2>
                   </li>
                   <li>
-                    <h2 className="text-sm">About</h2>
+                    <h2 className="text-[17px]">
+                      {" "}
+                      <Link
+                        href="/api/about"
+                        className={
+                          path === "/api/about" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        About
+                      </Link>
+                    </h2>
                   </li>
                   <li>
-                    <h2 className="text-sm">Contact</h2>
+                    <h2 className="text-[17px]">
+                      {" "}
+                      <Link
+                        href="/api/contact"
+                        className={
+                          path === "/api/contact" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        Contact
+                      </Link>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2 className="text-[17px]">
+                      {" "}
+                      <Link
+                        href="/api/login"
+                        className={
+                          path === "/api/login" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        Login
+                      </Link>
+                    </h2>
                   </li>
                 </ul>
               </div>
