@@ -1,25 +1,49 @@
 "use client";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Loader } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { AuthDeshiGajor } from "@/DeshiProvider/DeshiProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const session = useSession();
+  const { loading, setLoading } = useContext(AuthDeshiGajor);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+    setLoading(true);
     const resp = await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
-    console.log(resp);
+    setLoading(false);
+    if (resp?.status === 401) {
+      toast.error("Please enter a valid email and password");
+    }
+    if (resp?.status === 200) {
+      router.push("/");
+      toast.success("Login Success");
+    }
   };
+
+  const handleGoogleLogin = async (provider) => {
+    const resp = await signIn(provider);
+  };
+  const handleGithubLogin = async (provider) => {
+    const resp = await signIn(provider);
+  };
+  useEffect(() => {
+    if (session?.status === "authenticated") {
+      router.push("/");
+    }
+  }, [session, router]);
 
   return (
     <div className="flex justify-center items-center my-[20px] md:my-[100px]">
@@ -64,9 +88,17 @@ const Login = () => {
                 </span>
               )}
             </div>
-            <button className="bg-[#074c3e] text-white cursor-pointer text-lg w-full py-[10px] mt-4">
-              Login
-            </button>
+            {loading ? (
+              <div className="bg-[#074c3e] cursor-pointer w-full py-[10px] mt-4">
+                <h2 className="text-white flex items-center justify-center text-lg">
+                  <Loader className="animate-spin" size={25} />
+                </h2>
+              </div>
+            ) : (
+              <button className="bg-[#074c3e] text-white cursor-pointer text-lg w-full py-[10px] mt-4">
+                Login
+              </button>
+            )}
           </form>
           <div>
             <h2 className="mt-4 text-gray-500">

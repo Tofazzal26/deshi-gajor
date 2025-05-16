@@ -26,11 +26,6 @@ const handle = NextAuth({
         await ConnectMongoose();
         const currentUser = await UserModel.findOne({ email });
         if (!currentUser) {
-          //   const hashedPassword = bcrypt.hashSync(password, 10);
-          //   currentUser = await UserModel.create({
-          //     email,
-          //     password: hashedPassword,
-          //   });
           return null;
         }
         const passwordMatched = bcrypt.compareSync(
