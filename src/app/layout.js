@@ -18,14 +18,14 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="light">
       <body className={`${rajdhani.className}`}>
         <AuthProvider>
-          <DeshiProvider>
-            <ProviderQuery>
+          <ProviderQuery>
+            <DeshiProvider>
               <Header />
               {children}
               <Footer />
-            </ProviderQuery>
-            <Toaster />
-          </DeshiProvider>
+              <Toaster />
+            </DeshiProvider>
+          </ProviderQuery>
         </AuthProvider>
       </body>
     </html>

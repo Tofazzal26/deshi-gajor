@@ -3,8 +3,12 @@ import CommonHeadline from "@/CommonHeadline/page";
 import { Building, ChevronsRight, Search } from "lucide-react";
 import Image from "next/image";
 import ReviewCard from "./ReviewCard/page";
+import { useContext } from "react";
+import { AuthDeshiGajor } from "@/DeshiProvider/DeshiProvider";
 
 const ReviewSection = () => {
+  const { AllReview, reviewLoading } = useContext(AuthDeshiGajor);
+  console.log(AllReview);
   const handleSearch = () => {};
   return (
     <div className="container mx-auto">
@@ -35,13 +39,17 @@ const ReviewSection = () => {
             </div>
           </div>
         </div>
+        {reviewLoading ? (
+          <div className="flex justify-center items-center mt-4 lg:mt-8">
+            <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#074c3e]"></div>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="grid gap-6 lg:gap-8 grid-cols-1 lg:grid-cols-2 my-8 lg:my-20">
-          <div>
-            <ReviewCard />
-          </div>
-          <div>
-            <ReviewCard />
-          </div>
+          {AllReview?.map((item, idx) => (
+            <ReviewCard key={idx} item={item} />
+          ))}
         </div>
       </div>
     </div>
