@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
+  ArrowLeft,
   Building,
   MessageCircle,
   Send,
@@ -10,7 +11,7 @@ import {
   ThumbsUp,
   User,
 } from "lucide-react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -18,8 +19,13 @@ const ReviewDetails = () => {
   const params = useParams();
   const id = params.id;
   const [isComment, setIsComment] = useState("");
+  const router = useRouter();
 
-  const { isLoading, data: ReviewDetails = [] } = useQuery({
+  const {
+    refetch,
+    isLoading,
+    data: ReviewDetails = [],
+  } = useQuery({
     queryKey: ["ReviewDetails"],
     queryFn: async () => {
       const res = await axios.get(
@@ -46,6 +52,7 @@ const ReviewDetails = () => {
       );
       setIsComment("");
       if (response?.data?.status) {
+        refetch();
         toast.success("Comment add success");
       }
     } catch (error) {
@@ -62,6 +69,14 @@ const ReviewDetails = () => {
           </div>
         ) : (
           <div>
+            <div className="lg:w-[964px] mx-auto">
+              <button
+                onClick={() => router.push("/api/review")}
+                className="flex text-[#074c3e] cursor-pointer items-center text-lg gap-1 mb-6"
+              >
+                <ArrowLeft size={18} /> Back to stories
+              </button>
+            </div>
             <div className="flex justify-center items-center">
               <div className="howCardShadow lg:px-8 px-4 py-6 lg:py-12">
                 <div className="flex items-center gap-4">
@@ -90,20 +105,6 @@ const ReviewDetails = () => {
                 </div>
                 <div>
                   <h2 className="text-xl lg:text-2xl my-2 lg:my-3">{title}</h2>
-                  <div className="flex items-center gap-3 lg:gap-6 mb-2 lg:mb-4">
-                    <button className="bg-gray-100 cursor-pointer pt-[2px] pb-[4px] px-4 flex items-center gap-1 rounded-4xl">
-                      <ThumbsUp className="text-gray-600" size={16} />{" "}
-                      <span className="text-gray-600 text-[17px] mt-[4px]">
-                        0
-                      </span>
-                    </button>
-                    <button className="bg-gray-100 cursor-pointer px-4 pt-[3px] pb-[2px] flex items-center gap-1 rounded-4xl">
-                      <ThumbsDown className="text-gray-600" size={16} />{" "}
-                      <span className="text-gray-600 text-[17px] mb-[4px]">
-                        0
-                      </span>
-                    </button>
-                  </div>
                   <p className="text-[15px] lg:text-[17px] text-gray-500 leading-[30px] lg:w-[900px]">
                     {review}
                   </p>
@@ -154,7 +155,7 @@ const ReviewDetails = () => {
                       <div className="bg-[#e5e7eb] rounded-full w-[40px] h-[40px] flex items-center justify-center">
                         <User size={18} />
                       </div>
-                      <h2>Thank you for sharing</h2>
+                      <h2>{item?.review}</h2>
                     </div>
                   ))}
                 </div>

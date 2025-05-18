@@ -1,5 +1,5 @@
 "use client";
-import { Building, ChevronsRight, Search } from "lucide-react";
+import { ArrowLeft, Building, ChevronsRight, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const ReviewCard = ({ item }) => {
@@ -19,8 +19,10 @@ const ReviewCard = ({ item }) => {
           <div>
             <button
               className={` ${
-                status === "Negative"
+                status === "Nagative"
                   ? "bg-[#ffe0da] text-red-500"
+                  : status === "Mixed"
+                  ? "bg-[#fef9c3] text-[#854d2b]"
                   : "bg-[#e3fcf7] text-[#074c3e]"
               } lg:px-5 px-3 py-[3px] lg:py-[5px] lg:text-lg text-base`}
             >
@@ -30,7 +32,9 @@ const ReviewCard = ({ item }) => {
         </div>
         <div>
           <h2 className="text-xl lg:text-2xl my-2 lg:my-3">{title}</h2>
-          <p className="text-[15px] lg:text-[17px] text-gray-500">{review}</p>
+          <p className="text-[14px] lg:text-[16px] text-gray-500">
+            {`${review?.slice(0, 140)}....`}
+          </p>
         </div>
         <div className="flex justify-between items-center mt-2 lg:mt-3">
           <h2 className="lg:text-base text-sm">{date}</h2>

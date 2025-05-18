@@ -52,7 +52,9 @@ const ReviewSection = () => {
         </div>
         <div className="flex justify-between items-center border-b-[1px] border-gray-200 pb-4 lg:pb-8">
           <div>
-            <h2 className="text-lg lg:text-2xl">Total Review: 0</h2>
+            <h2 className="text-lg lg:text-2xl">
+              Total Review: {AllReview ? AllReview.length : "0"}
+            </h2>
           </div>
           <div>
             <div className="relative">
@@ -73,7 +75,19 @@ const ReviewSection = () => {
             <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#074c3e]"></div>
           </div>
         ) : (
-          ""
+          <div>
+            {AllReview?.length === 0 ? (
+              <div className="text-center mt-5 lg:mt-10">
+                <h2 className="text-xl">No stories found</h2>
+                <p className="text-gray-500 mt-2">
+                  No results found. Try changing your filters or start by adding
+                  a new story!
+                </p>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         )}
         <div>
           <div className="grid gap-6 lg:gap-8 grid-cols-1 lg:grid-cols-2 my-8 lg:my-20">

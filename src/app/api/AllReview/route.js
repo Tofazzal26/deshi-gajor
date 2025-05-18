@@ -14,7 +14,7 @@ export const GET = async (request) => {
       const regex = new RegExp(`^${search}`, "i");
       query.company_name = { $regex: regex };
     }
-    const sizeNumber = parseInt(size) || 4;
+    const sizeNumber = parseInt(size) || 10;
     const pageNumber = parseInt(page) || 1;
     const res = await ReviewModel.find(query)
       .skip(sizeNumber * (pageNumber - 1))

@@ -14,7 +14,7 @@ const DeshiProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemPerPage, setItemPerPage] = useState(4);
+  const [itemPerPage, setItemPerPage] = useState(10);
 
   const { data: reviewResponse = {}, isLoading: reviewLoading } = useQuery({
     queryKey: ["allReview", search, currentPage, itemPerPage],
@@ -42,6 +42,7 @@ const DeshiProvider = ({ children }) => {
     currentPage,
     setCurrentPage,
     numberOfPage,
+    TotalReview,
   };
   return (
     <AuthDeshiGajor.Provider value={allFunction}>

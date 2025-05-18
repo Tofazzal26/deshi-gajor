@@ -3,7 +3,7 @@
 import CommonHeadline from "@/CommonHeadline/page";
 import { AuthDeshiGajor } from "@/DeshiProvider/DeshiProvider";
 import ReviewCard from "@/ReviewSection/ReviewCard/page";
-import { Search, SquarePen } from "lucide-react";
+import { ArrowLeft, Search, SquarePen } from "lucide-react";
 import React, { useContext } from "react";
 
 const Review = () => {
@@ -38,6 +38,8 @@ const Review = () => {
     }
   };
 
+  console.log(AllReview, "review");
+
   return (
     <div className="container mx-auto">
       <div className="lg:px-0 px-2">
@@ -49,6 +51,7 @@ const Review = () => {
             }
           />
         </div>
+
         <div>
           <div className="flex justify-between items-center border-b-[1px] border-gray-200 pb-4 lg:pb-8">
             <div>
@@ -76,8 +79,21 @@ const Review = () => {
             <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#074c3e]"></div>
           </div>
         ) : (
-          ""
+          <div>
+            {AllReview?.length === 0 ? (
+              <div className="text-center mt-5 lg:mt-10">
+                <h2 className="text-xl">No stories found</h2>
+                <p className="text-gray-500 mt-2">
+                  No results found. Try changing your filters or start by adding
+                  a new story!
+                </p>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         )}
+
         <div className="my-10 lg:my-20">
           <div className="grid-cols-1 grid lg:grid-cols-2 gap-4 lg:gap-8">
             {AllReview?.map((item, idx) => (
