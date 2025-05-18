@@ -21,10 +21,11 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  comment: {
-    type: Array,
-    default: [],
-  },
+  comment: [
+    {
+      review: String,
+    },
+  ],
 });
 
 const ReviewModel =
