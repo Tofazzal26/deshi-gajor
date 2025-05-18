@@ -7,9 +7,38 @@ import { useContext } from "react";
 import { AuthDeshiGajor } from "@/DeshiProvider/DeshiProvider";
 
 const ReviewSection = () => {
-  const { AllReview, reviewLoading } = useContext(AuthDeshiGajor);
-  console.log(AllReview);
-  const handleSearch = () => {};
+  const {
+    AllReview,
+    reviewLoading,
+    setSearch,
+    pages,
+    currentPage,
+    setCurrentPage,
+    numberOfPage,
+  } = useContext(AuthDeshiGajor);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const text = e.target.value;
+    setSearch(text);
+  };
+
+  const handleCurrentPage = (crnPage) => {
+    console.log(crnPage);
+    setCurrentPage(crnPage);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < numberOfPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <div className="lg:px-0 px-2">
@@ -46,10 +75,41 @@ const ReviewSection = () => {
         ) : (
           ""
         )}
-        <div className="grid gap-6 lg:gap-8 grid-cols-1 lg:grid-cols-2 my-8 lg:my-20">
-          {AllReview?.map((item, idx) => (
-            <ReviewCard key={idx} item={item} />
-          ))}
+        <div>
+          <div className="grid gap-6 lg:gap-8 grid-cols-1 lg:grid-cols-2 my-8 lg:my-20">
+            {AllReview?.map((item, idx) => (
+              <ReviewCard key={idx} item={item} />
+            ))}
+          </div>
+          <div
+            className={` ${
+              reviewLoading ? "hidden" : ""
+            } space-x-2 mt-8 text-center`}
+          >
+            <button
+              onClick={handlePrevPage}
+              className="bg-[#074c3e] px-4 py-2 cursor-pointer text-white rounded-md"
+            >
+              Prev
+            </button>
+            {pages.map((item, index) => (
+              <button
+                key={index + 1}
+                onClick={() => handleCurrentPage(index + 1)}
+                className={`border-[1px] cursor-pointer text-base border-[#074c3e] px-4 py-2 text-[#074c3e] rounded-md ${
+                  currentPage === index + 1 ? "bg-[#074c3e] text-white" : ""
+                }`}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button
+              onClick={handleNextPage}
+              className="bg-[#074c3e] cursor-pointer px-4 py-2 text-white rounded-md"
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>

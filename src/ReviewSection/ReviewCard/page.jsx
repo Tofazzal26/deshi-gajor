@@ -1,10 +1,14 @@
+"use client";
 import { Building, ChevronsRight, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const ReviewCard = ({ item }) => {
-  const { company_name, title, review, date, status } = item || {};
+  const { company_name, title, review, date, status, _id } = item || {};
+  const router = useRouter();
+
   return (
     <div>
-      <div className="howCardShadow p-4 lg:p-8 h-full">
+      <div className="howCardShadow p-4 lg:p-8 h-full fade-in-up">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex justify-center items-center lg:w-[50px] w-[45px] h-[45px] lg:h-[50px] bg-gray-100 rounded-full">
@@ -30,7 +34,10 @@ const ReviewCard = ({ item }) => {
         </div>
         <div className="flex justify-between items-center mt-2 lg:mt-3">
           <h2 className="lg:text-base text-sm">{date}</h2>
-          <button className="flex items-center gap-2 text-base lg:text-lg text-[#074c3e]">
+          <button
+            onClick={() => router.push(`/api/review/${_id}`)}
+            className="flex items-center gap-2 cursor-pointer text-base lg:text-lg text-[#074c3e]"
+          >
             Read More <ChevronsRight size={18} />{" "}
           </button>
         </div>

@@ -12,21 +12,37 @@ import React from "react";
 const DeshiProvider = ({ children }) => {
   const session = useSession();
   const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemPerPage, setItemPerPage] = useState(4);
 
   const { data: reviewResponse = {}, isLoading: reviewLoading } = useQuery({
-    queryKey: ["allReview"],
+    queryKey: ["allReview", search, currentPage, itemPerPage],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/AllReview`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/AllReview?search=${search}&size=${itemPerPage}&page=${currentPage}`
       );
       return res?.data;
     },
   });
   const AllReview = reviewResponse?.data || [];
   const TotalReview = reviewResponse?.totalReview || 0;
-  console.log(session);
-  console.log(TotalReview);
-  const allFunction = { loading, setLoading, AllReview, reviewLoading };
+  const numberOfPage = Math.ceil(TotalReview / itemPerPage);
+  const pages = [];
+  for (let index = 1; index <= numberOfPage; index++) {
+    pages.push(index);
+  }
+  const allFunction = {
+    loading,
+    setLoading,
+    AllReview,
+    reviewLoading,
+    setSearch,
+    pages,
+    currentPage,
+    setCurrentPage,
+    numberOfPage,
+  };
   return (
     <AuthDeshiGajor.Provider value={allFunction}>
       {children}
