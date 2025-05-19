@@ -4,6 +4,7 @@ import CommonHeadline from "@/CommonHeadline/page";
 import { AuthDeshiGajor } from "@/DeshiProvider/DeshiProvider";
 import ReviewCard from "@/ReviewSection/ReviewCard/page";
 import { ArrowLeft, Search, SquarePen } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React, { useContext } from "react";
 
 const Review = () => {
@@ -16,6 +17,9 @@ const Review = () => {
     setCurrentPage,
     numberOfPage,
   } = useContext(AuthDeshiGajor);
+
+  const router = useRouter();
+
   const handleSearch = async (e) => {
     e.preventDefault();
     const text = e.target.value;
@@ -38,8 +42,6 @@ const Review = () => {
     }
   };
 
-  console.log(AllReview, "review");
-
   return (
     <div className="container mx-auto">
       <div className="lg:px-0 px-2">
@@ -55,7 +57,10 @@ const Review = () => {
         <div>
           <div className="flex justify-between items-center border-b-[1px] border-gray-200 pb-4 lg:pb-8">
             <div>
-              <button className="bg-[#074c3e] text-white flex lg:text-base text-sm items-center gap-2 lg:px-4 px-3 py-[10px] lg:py-3">
+              <button
+                onClick={() => router.push(`/api/WriteReview`)}
+                className="bg-[#074c3e] text-white cursor-pointer flex lg:text-base text-sm items-center gap-2 lg:px-4 px-3 py-[10px] lg:py-3"
+              >
                 Write Review <SquarePen size={18} />
               </button>
             </div>

@@ -1,8 +1,12 @@
+"use client";
 import { Search, SquarePen } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Banner = () => {
+  const router = useRouter();
+
   return (
     <div className="bg-[#03211b] text-white">
       <div className="container mx-auto lg:px-0 px-2">
@@ -22,10 +26,16 @@ const Banner = () => {
                 share real experiences — helping you make smarter decisions.
               </p>
               <div className="flex items-center gap-3 lg:gap-6 mt-3 lg:mt-7">
-                <button className="flex items-center gap-2 rounded-full px-6 lg:px-8 py-[12px] lg:py-[14px] cursor-pointer  bg-[#074c3e] ">
+                <button
+                  onClick={() => router.push(`/api/review`)}
+                  className="flex items-center gap-2 rounded-full px-6 lg:px-8 py-[12px] lg:py-[14px] cursor-pointer  bg-[#074c3e] "
+                >
                   Search Company <Search size={18} />{" "}
                 </button>
-                <button className="flex items-center gap-2 bg-transparent border-[1px] border-[#ffb25a] text-[#ffb25a] rounded-full px-6 lg:px-8 py-[12px] lg:py-[14px] cursor-pointer">
+                <button
+                  onClick={() => router.push(`/api/WriteReview`)}
+                  className="flex items-center gap-2 bg-transparent border-[1px] border-[#ffb25a] text-[#ffb25a] rounded-full px-6 lg:px-8 py-[12px] lg:py-[14px] cursor-pointer"
+                >
                   Write Review <SquarePen size={18} />{" "}
                 </button>
               </div>
