@@ -134,6 +134,14 @@ const Header = () => {
                             </a>
                           </li>
                           <li>
+                            <Link
+                              href="/api/dashboard/MyProfile"
+                              className="text-sm text-gray-600"
+                            >
+                              My Profile
+                            </Link>
+                          </li>
+                          <li>
                             <a
                               onClick={() => signOut()}
                               className="text-sm text-red-500 cursor-pointer"
@@ -261,14 +269,27 @@ const Header = () => {
                   <li>
                     <h2 className="text-[17px]">
                       {" "}
-                      <Link
-                        href="/api/login"
-                        className={
-                          path === "/api/login" ? "text-[#ffb25a]" : ""
-                        }
-                      >
-                        Login
-                      </Link>
+                      {session?.status === "authenticated" ? (
+                        <Link
+                          href="/api/dashboard/MyProfile"
+                          className={
+                            path === "/api/dashboard/MyProfile"
+                              ? "text-[#ffb25a]"
+                              : ""
+                          }
+                        >
+                          My Profile
+                        </Link>
+                      ) : (
+                        <Link
+                          href="/api/login"
+                          className={
+                            path === "/api/login" ? "text-[#ffb25a]" : ""
+                          }
+                        >
+                          Login
+                        </Link>
+                      )}
                     </h2>
                   </li>
                 </ul>

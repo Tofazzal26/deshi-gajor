@@ -6,7 +6,7 @@ import Image from "next/image";
 const MyProfile = () => {
   const session = useSession();
   return (
-    <div>
+    <div className="lg:mb-0 mb-4">
       {session?.status === "loading" ? (
         <div className="flex justify-center items-center mt-5 lg:mt-10">
           <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#074c3e]"></div>
