@@ -1,13 +1,13 @@
-import ReviewModel from "@/app/ReviewModel/ReviewModel";
+import IsraelModel from "@/app/IsraelModel/IsraelModel";
 import ConnectMongoose from "../../../../../lib/ConnectMongoose/ConnectMongoose";
-import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
+import { ObjectId } from "mongodb";
 export const GET = async (request, { params }) => {
   try {
     await ConnectMongoose();
     const id = await params?.id;
     const query = { _id: new ObjectId(id) };
-    const res = await ReviewModel.findById(query);
+    const res = await IsraelModel.findById(query);
     return NextResponse.json({
       message: "Review Get Success",
       status: 200,

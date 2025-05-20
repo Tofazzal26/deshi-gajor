@@ -1,11 +1,28 @@
 "use client";
 import CommonHeadline from "@/CommonHeadline/page";
-import React from "react";
+import React, { useState } from "react";
 import IsraelCard from "./IsraelCard";
 import { PackagePlus, Plus, Search, SquarePen } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const Israel = () => {
-  const handleSearch = () => {};
+  const [search, setSearch] = useState("");
+  const handleSearch = (e) => {
+    const product = e.target.value;
+    setSearch(product);
+  };
+
+  const { isLoading: productLoading, data: AllProduct = [] } = useQuery({
+    queryKey: ["AllProduct", search],
+    queryFn: async () => {
+      const resp = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/IsraelAllProduct?search=${search}`
+      );
+      return resp?.data?.data;
+    },
+  });
+
   return (
     <div className="container mx-auto">
       <div className="lg:px-0 px-2">
@@ -21,9 +38,9 @@ const Israel = () => {
           <div>
             <div className="flex justify-between items-center border-b-[1px] border-gray-200 pb-4 lg:pb-8">
               <div>
-                <button className="bg-[#074c3e] text-white flex lg:text-base text-sm items-center gap-2 lg:px-4 px-3 py-[10px] lg:py-3">
-                  Add Product <Plus size={18} />
-                </button>
+                <h2 className="text-lg lg:text-2xl">
+                  Total Product: {AllProduct ? AllProduct.length : "0"}
+                </h2>
               </div>
               <div>
                 <div className="relative">
@@ -41,13 +58,37 @@ const Israel = () => {
             </div>
           </div>
         </div>
+        <div>
+          {productLoading ? (
+            <div className="flex justify-center items-center mt-4 lg:mt-8">
+              <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#074c3e]"></div>
+            </div>
+          ) : (
+            <div>
+              {AllProduct?.length === 0 ? (
+                <div className="text-center">
+                  <h2 className="text-xl mt-10">
+                    Couldn't find the product. Check{" "}
+                    <a
+                      href="https://www.google.com"
+                      target="_blank"
+                      className="text-blue-400 border-b-[1px] border-blue-400"
+                    >
+                      Google{" "}
+                    </a>
+                    ?
+                  </h2>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          )}
+        </div>
         <div className="mb-10 lg:my-20 lg:gap-8 gap-4 grid grid-cols-2 lg:grid-cols-6">
-          <IsraelCard />
-          <IsraelCard />
-          <IsraelCard />
-          <IsraelCard />
-          <IsraelCard />
-          <IsraelCard />
+          {AllProduct?.map((item, idx) => (
+            <IsraelCard item={item} key={idx} />
+          ))}
         </div>
       </div>
     </div>
