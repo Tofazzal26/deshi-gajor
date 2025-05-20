@@ -23,7 +23,7 @@ const ReviewSection = () => {
   };
 
   const handleCurrentPage = (crnPage) => {
-    console.log(crnPage);
+    // console.log(crnPage);
     setCurrentPage(crnPage);
   };
 

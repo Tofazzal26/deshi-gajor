@@ -54,7 +54,7 @@ const Register = () => {
           image,
         }
       );
-      console.log(resp);
+      // console.log(resp);
       if (resp.data.status === 409) {
         toast.error("You already have an account, please log in.");
       }

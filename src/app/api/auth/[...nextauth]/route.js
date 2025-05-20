@@ -63,7 +63,7 @@ const handle = NextAuth({
             return user;
           }
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
       if (account.provider === "github") {
@@ -76,7 +76,7 @@ const handle = NextAuth({
             return user;
           }
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
       return user;

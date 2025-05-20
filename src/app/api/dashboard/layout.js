@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { LayoutDashboard, LogOut, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 const Layout = ({ children }) => {
   const pathname = usePathname();
   const [hasMounted, setHasMounted] = useState(false);

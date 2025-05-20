@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const MyProfile = () => {
   const session = useSession();
+
   return (
     <div className="lg:mb-0 mb-4">
       {session?.status === "loading" ? (
