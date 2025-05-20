@@ -12,7 +12,7 @@ import {
 const AdminDashboard = () => {
   return (
     <div className="bg-gray-100 h-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-6">
         <div className="flex items-center bg-white cursor-pointer shadow-md rounded-lg py-8 px-8 hover:bg-blue-50 transition duration-200">
           <div className="text-blue-500">
             <MessageCircleMore className="w-10 h-10" />

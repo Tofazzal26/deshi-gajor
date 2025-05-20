@@ -11,7 +11,7 @@ const Banner = () => {
     <div className="bg-[#03211b] text-white">
       <div className="container mx-auto lg:px-0 px-2">
         <div className="pt-[50px]">
-          <div className="flex lg:gap-0 gap-6 lg:flex-row flex-col items-center justify-between">
+          <div className="flex lg:gap-0 gap-6 lg:flex-row md:flex-row flex-col items-center justify-between">
             <div>
               <h2 className="text-base lg:text-xl text-[#ffb25a] flex items-center gap-4">
                 <Image src="/title.png" width={30} height={30} alt="title" />
@@ -20,7 +20,7 @@ const Banner = () => {
               <h2 className="text-xl lg:text-[64px] lg:w-[550px] lg:leading-[75px] my-3 lg:my-4">
                 Know the Company Before You Trust It
               </h2>
-              <p className="text-base lg:text-lg lg:w-[600px]">
+              <p className="text-base lg:text-lg lg:w-[600px] md:w-[400px]">
                 We know that choosing the right company or service can be
                 confusing. That’s why we created a platform where real people
                 share real experiences — helping you make smarter decisions.
@@ -46,7 +46,7 @@ const Banner = () => {
                 width={600}
                 height={600}
                 alt="review"
-                className="lg:w-[600px] lg:h-[710px] w-[300px] h-[300px]"
+                className="lg:w-[600px] lg:h-[710px] md:h-[400px] w-[300px] h-[300px]"
               />
             </div>
           </div>

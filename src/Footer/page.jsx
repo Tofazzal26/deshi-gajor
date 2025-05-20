@@ -16,7 +16,7 @@ const Footer = () => {
     <div className="bg-[#03211b]">
       <div className="container mx-auto">
         <div className="py-[80px] lg:py-[100px] lg:px-0 px-2">
-          <div className="flex lg:flex-row lg:gap-0 gap-4 flex-col justify-between">
+          <div className="flex lg:flex-row lg:gap-0 gap-4 md:flex-col flex-col justify-between">
             <div>
               <div className="flex items-center text-white gap-1 text-[22px] lg:text-[32px]">
                 <Image
@@ -103,7 +103,7 @@ const Footer = () => {
                   placeholder="Email Address"
                   className="bg-transparent border-[1px] border-[#0b4f41] rounded-2xl px-10 py-5 outline-none "
                 />
-                <div className="w-[70px] h-[50px] bg-[#0b4f41] absolute lg:right-[50px] lg:top-[7px] rounded-2xl flex justify-center items-center top-[7px] right-[125px]">
+                <div className="w-[70px] h-[50px] bg-[#0b4f41] absolute lg:right-[50px] lg:top-[7px] rounded-2xl flex justify-center items-center md:left-[180px] top-[7px] right-[125px]">
                   <Navigation color="#ffffff" size={25} />
                 </div>
               </div>

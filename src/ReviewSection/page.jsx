@@ -90,13 +90,13 @@ const ReviewSection = () => {
           </div>
         )}
         <div>
-          <div className="grid gap-6 lg:gap-8 grid-cols-1 lg:grid-cols-2 my-8 lg:my-20">
+          <div className="grid gap-6 lg:gap-8 md:gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-8 lg:my-20">
             {AllReview?.map((item, idx) => (
               <ReviewCard key={idx} item={item} />
             ))}
           </div>
           <div
-            className={` ${
+            className={` mb-5 lg:mb-10 ${
               reviewLoading ? "hidden" : ""
             } space-x-2 mt-8 text-center`}
           >

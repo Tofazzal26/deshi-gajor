@@ -100,7 +100,7 @@ const Review = () => {
         )}
 
         <div className="my-10 lg:my-20">
-          <div className="grid-cols-1 grid lg:grid-cols-2 gap-4 lg:gap-8">
+          <div className="grid-cols-1 grid md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8">
             {AllReview?.map((item, idx) => (
               <ReviewCard key={idx} item={item} />
             ))}

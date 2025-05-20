@@ -71,7 +71,7 @@ const LatestReview = () => {
               </div>
             </div>
             <div className="lg:col-span-4">
-              <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 grid-cols-1">
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-4 lg:gap-8 grid-cols-1">
                 <div className=" p-8 rounded-xl howCardShadow">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">

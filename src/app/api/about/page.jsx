@@ -47,8 +47,8 @@ const About = () => {
             easier.
           </p>
         </div>
-        <div className="mt-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="mt-10 lg:mt-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center">
             <div className="howCardShadow">
               <div className="text-center lg:px-12 px-6 py-10 lg:py-20">
                 <h2 className="text-xl lg:text-3xl lg:w-[400px] mx-auto">
@@ -72,18 +72,18 @@ const About = () => {
                 width={400}
                 height={400}
                 alt="about"
-                className="w-full h-[350px] lg:h-[470px]"
+                className="w-full h-[350px] lg:h-[470px] md:h-[335px]"
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 items-center">
             <div>
               <Image
                 src={"/about2.jpg"}
                 width={400}
                 height={400}
                 alt="about"
-                className="w-full h-[350px] lg:h-[470px]"
+                className="w-full h-[350px] lg:h-[470px] md:h-[360px]"
               />
             </div>
             <div className="howCardShadow">

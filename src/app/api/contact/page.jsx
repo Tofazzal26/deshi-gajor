@@ -40,7 +40,7 @@ const Contact = () => {
           />
         </div>
         <div>
-          <div className="flex md:flex-row flex-col justify-center items-center gap-4 md:gap-8">
+          <div className="flex lg:flex-row flex-col justify-center items-center gap-4 md:gap-8">
             {contactInfo.map((item) => (
               <div
                 key={item.id}
@@ -66,20 +66,20 @@ const Contact = () => {
         <div>
           <div className="mt-[20px] md:mt-[60px]">
             <div className={ContactShadow.cardShadow}>
-              <div className="md:w-[800px] mx-auto p-4 md:p-0">
+              <div className="lg:w-[800px] mx-auto p-4 md:p-0">
                 <div>
                   <div className="text-center border-b-[1px] border-[#e5e5e5] py-[20px] md:py-[60px]">
                     <h2 className=" text-[25px] md:text-[40px]">Send Us</h2>
-                    <p className="text-[16px] md:text-[18px] mx-auto text-gray-600 md:w-[600px]">
+                    <p className="text-[16px] lg:text-[18px] mx-auto text-gray-600 lg:w-[600px]">
                       DeshiGajor is an online platform that makes it easy to
                       read, write, and explore company reviews. Users can
                       search, filter, and share experiences to help others make
                       informed decisions.
                     </p>
                   </div>
-                  <div className="mt-[20px] md:mt-[60px] pb-[30px] md:pb-[100px]">
-                    <div className="grid  grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                      <div className="col-span-1">
+                  <div className="mt-[20px] lg:mt-[60px] pb-[30px] md:pb-5 md:pt-5 md:px-5 lg:pb-[100px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+                      <div className="lg:col-span-1">
                         {" "}
                         <div>
                           <label>Your name *</label>
@@ -90,7 +90,7 @@ const Contact = () => {
                           />
                         </div>
                       </div>
-                      <div className="col-span-1">
+                      <div className="lg:col-span-1">
                         {" "}
                         <div>
                           <label>Your email *</label>

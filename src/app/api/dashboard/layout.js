@@ -12,10 +12,10 @@ const Layout = ({ children }) => {
   }, []);
   if (!hasMounted) return null;
   return (
-    <div className="flex lg:flex-row flex-col">
+    <div className="flex lg:flex-row md:flex-row flex-col">
       <div>
-        <div className="bg-[#03211b] text-white lg:w-[265px] p-4 lg:h-[90vh] border-b-[1px] border-[#1c3020]">
-          <div className="space-y-2 flex lg:flex-col lg:gap-0 gap-4 flex-row">
+        <div className="bg-[#03211b] text-white lg:w-[265px] px-2 p-4 md:h-full lg:h-[90vh] border-b-[1px] border-[#1c3020]">
+          <div className="lg:space-y-2 md:space-y-1 flex lg:flex-col md:flex-col lg:gap-0 md:gap-2 gap-4 flex-row">
             <Link
               href={"/api/dashboard/MyProfile"}
               className={`${
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </div>
-      <div className="lg:flex-1">{children}</div>
+      <div className="lg:flex-1 md:flex-1">{children}</div>
     </div>
   );
 };

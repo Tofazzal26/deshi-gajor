@@ -85,7 +85,7 @@ const Israel = () => {
             </div>
           )}
         </div>
-        <div className="mb-10 lg:my-20 lg:gap-8 gap-4 grid grid-cols-2 lg:grid-cols-6">
+        <div className="mb-10 lg:my-20 lg:gap-8 gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {AllProduct?.map((item, idx) => (
             <IsraelCard item={item} key={idx} />
           ))}

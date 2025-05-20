@@ -11,7 +11,7 @@ const HowWorks = () => {
             title={"How it Works"}
             paragraph={"Understand the process in just a few simple steps."}
           />
-          <div className="grid lg:grid-cols-4 grid-cols-1 gap-8">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 lg:gap-8">
             <div className="rounded-lg p-6 lg:p-8 howCardShadow text-center flex justify-center items-center flex-col">
               <Image
                 src={"/search2.png"}
