@@ -11,6 +11,7 @@ import React from "react";
 
 const DeshiProvider = ({ children }) => {
   const session = useSession();
+  console.log(session);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

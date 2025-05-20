@@ -109,11 +109,17 @@ const Login = () => {
             </h2>
           </div>
           <div className="mt-4 flex justify-center items-center gap-2">
-            <button className="flex px-4 py-2 justify-center items-center gap-2 border-2 border-[#e5e5e5]">
+            <button
+              onClick={() => handleGoogleLogin("google")}
+              className="flex px-4 py-2 justify-center cursor-pointer items-center gap-2 border-2 border-[#e5e5e5]"
+            >
               <Image src="/google.png" alt="google" width={30} height={30} />
               Continue to Google
             </button>
-            <button className="flex px-4 py-2 justify-center items-center gap-2 border-2 border-[#e5e5e5]">
+            <button
+              onClick={() => handleGithubLogin("github")}
+              className="flex px-4 py-2 cursor-pointer justify-center items-center gap-2 border-2 border-[#e5e5e5]"
+            >
               <Image src="/github.png" alt="google" width={30} height={30} />
               Continue to Github
             </button>
