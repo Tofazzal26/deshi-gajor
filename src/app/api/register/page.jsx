@@ -76,85 +76,87 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-[20px] md:my-[100px]">
-      <div className="border-2 border-[#e5e5e5] rounded-md">
-        <div className="md:px-[60px] px-[20px] pb-[20px] md:pb-14">
-          <h1 className="text-center text-lg md:text-2xl my-4 md:my-10 uppercase">
-            Register
-          </h1>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label className="text-gray-500">Username *</label>
-              <br />
-              <input
-                type="text"
-                name="name"
-                required
-                className="md:py-[10px] py-2 mt-2 mb-4 px-3 w-full md:w-[400px] md:px-5 bg-[#f3f4f7] border-[1px] border-[#e5e5e5] outline-none rounded-none"
-              />
-            </div>
-            <div className="mb-2">
-              <label className="text-gray-500">Select Photo *</label>
-              <br />
-              <input
-                onChange={handleImageChange}
-                type="file"
-                required
-                className="file-input w-full bg-[#f3f4f7] border-[#e5e5e5] text-gray-500 rounded-none py-[6px] outline-none px-5"
-              />
-            </div>
-            <div>
-              <label className="text-gray-500">Email address *</label>
-              <br />
-              <input
-                type="text"
-                name="email"
-                required
-                className="md:py-[10px] py-2 mt-2 mb-4 px-3 w-full md:w-[400px] md:px-5 bg-[#f3f4f7] border-[1px]  outline-none rounded-none border-[#e5e5e5]"
-              />
-            </div>
-            <div className="relative">
-              <label className="text-gray-500">Password *</label>
-              <br />
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                required
-                className="md:py-[10px] py-2 mt-2 border-[#e5e5e5] px-3 w-full md:w-[400px] md:px-5 bg-[#f3f4f7] border-[1px]  outline-none rounded-none"
-              />
-              {showPassword ? (
-                <span
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute top-[45px] right-[10px] cursor-pointer"
-                >
-                  <Eye size={20} className="text-gray-500" />
-                </span>
+    <div className="mt-[100px] lg:mt-[150px]">
+      <div className="flex justify-center items-center my-[20px] md:my-[100px]">
+        <div className="border-2 border-[#e5e5e5] rounded-md">
+          <div className="md:px-[60px] px-[20px] pb-[20px] md:pb-14">
+            <h1 className="text-center text-lg md:text-2xl my-4 md:my-10 uppercase">
+              Register
+            </h1>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label className="text-gray-500">Username *</label>
+                <br />
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="md:py-[10px] py-2 mt-2 mb-4 px-3 w-full md:w-[400px] md:px-5 bg-[#f3f4f7] border-[1px] border-[#e5e5e5] outline-none rounded-none"
+                />
+              </div>
+              <div className="mb-2">
+                <label className="text-gray-500">Select Photo *</label>
+                <br />
+                <input
+                  onChange={handleImageChange}
+                  type="file"
+                  required
+                  className="file-input w-full bg-[#f3f4f7] border-[#e5e5e5] text-gray-500 rounded-none py-[6px] outline-none px-5"
+                />
+              </div>
+              <div>
+                <label className="text-gray-500">Email address *</label>
+                <br />
+                <input
+                  type="text"
+                  name="email"
+                  required
+                  className="md:py-[10px] py-2 mt-2 mb-4 px-3 w-full md:w-[400px] md:px-5 bg-[#f3f4f7] border-[1px]  outline-none rounded-none border-[#e5e5e5]"
+                />
+              </div>
+              <div className="relative">
+                <label className="text-gray-500">Password *</label>
+                <br />
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  required
+                  className="md:py-[10px] py-2 mt-2 border-[#e5e5e5] px-3 w-full md:w-[400px] md:px-5 bg-[#f3f4f7] border-[1px]  outline-none rounded-none"
+                />
+                {showPassword ? (
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute top-[45px] right-[10px] cursor-pointer"
+                  >
+                    <Eye size={20} className="text-gray-500" />
+                  </span>
+                ) : (
+                  <span
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute top-[45px] right-[10px] cursor-pointer"
+                  >
+                    <EyeOff size={20} className="text-gray-500" />
+                  </span>
+                )}
+              </div>
+              {loginLoading ? (
+                <h2 className="bg-[#074c3e] text-white flex items-center justify-center text-lg w-full py-[10px] mt-4">
+                  <Loader className="animate-spin" size={25} />
+                </h2>
               ) : (
-                <span
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute top-[45px] right-[10px] cursor-pointer"
-                >
-                  <EyeOff size={20} className="text-gray-500" />
-                </span>
+                <button className="bg-[#074c3e] text-white cursor-pointer text-lg w-full py-[10px] mt-4">
+                  Register
+                </button>
               )}
-            </div>
-            {loginLoading ? (
-              <h2 className="bg-[#074c3e] text-white flex items-center justify-center text-lg w-full py-[10px] mt-4">
-                <Loader className="animate-spin" size={25} />
+            </form>
+            <div>
+              <h2 className="mt-4 text-gray-500">
+                You Have Already Account ?{" "}
+                <Link href="/api/login" className="text-[#074c3e]">
+                  Login
+                </Link>
               </h2>
-            ) : (
-              <button className="bg-[#074c3e] text-white cursor-pointer text-lg w-full py-[10px] mt-4">
-                Register
-              </button>
-            )}
-          </form>
-          <div>
-            <h2 className="mt-4 text-gray-500">
-              You Have Already Account ?{" "}
-              <Link href="/api/login" className="text-[#074c3e]">
-                Login
-              </Link>
-            </h2>
+            </div>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ const Contact = () => {
   return (
     <div className="container mx-auto">
       <div className="my-20 lg:px-0 px-2">
-        <div>
+        <div className="mt-[100px] lg:mt-[150px]">
           <CommonHeadline
             title={"Get in Touch With Us"}
             paragraph={

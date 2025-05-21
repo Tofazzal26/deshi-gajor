@@ -73,7 +73,7 @@ const Blog = () => {
   ];
   return (
     <div className="container mx-auto">
-      <div className="lg:px-0 px-2">
+      <div className="lg:px-0 px-2 mt-[100px] lg:mt-[150px]">
         <div className="grid grid-cols-1 gap-4 md:gap-12  lg:grid-cols-7 my-4 md:my-12">
           <div className="lg:col-span-5 lg:order-1 order-2">
             <div className="space-y-4 lg:space-y-8">

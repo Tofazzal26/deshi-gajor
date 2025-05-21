@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
   }, []);
   if (!hasMounted) return null;
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row mt-[85px] md:mt-[105px] lg:mt-[95px]">
       <div className="lg:hidden">
         <div className="drawer">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
               <ChevronRight />
             </label>
           </div>
-          <div className="drawer-side">
+          <div className="drawer-side md:mt-[100px] mt-[80px]">
             <label
               htmlFor="my-drawer"
               aria-label="close sidebar"

@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           <ProviderQuery>
             <DeshiProvider>
               <Header />
-              {children}
+              <div className="mt-[80px] lg:mt-[95px]">{children}</div>
               <Footer />
               <Toaster />
             </DeshiProvider>

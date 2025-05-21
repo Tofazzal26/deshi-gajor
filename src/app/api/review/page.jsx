@@ -45,7 +45,7 @@ const Review = () => {
   return (
     <div className="container mx-auto">
       <div className="lg:px-0 px-2">
-        <div>
+        <div className="mt-[100px] lg:mt-[150px]">
           <CommonHeadline
             title={"Real Experiences. True Stories."}
             paragraph={
