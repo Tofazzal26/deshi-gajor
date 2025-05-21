@@ -8,7 +8,7 @@ const Banner = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#03211b] text-white">
+    <div className="bg-[#03211b] text-white mt-[80px] lg:mt-[90px]">
       <div className="container mx-auto lg:px-0 px-2">
         <div className="pt-[50px]">
           <div className="flex lg:gap-0 gap-6 lg:flex-row md:flex-row flex-col items-center justify-between">

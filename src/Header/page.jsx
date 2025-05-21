@@ -8,7 +8,7 @@ const Header = () => {
   const path = usePathname();
   const session = useSession();
   return (
-    <div className="bg-[#03211b] text-white py-2 border-b-[1px] border-[#1c3020]">
+    <div className="bg-[#03211b] text-white py-2 border-b-[1px] border-[#1c3020] w-full z-10 fixed top-0">
       <div className="container mx-auto">
         <div>
           <div className="navbar">
@@ -105,7 +105,7 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <h2 className="text-[15px] lg:text-[17px]">
+                    <button className="bg-[#074c3e] text-[15px] lg:text-[17px] px-5 py-2 rounded-full">
                       <Link
                         href="/api/donate"
                         className={
@@ -114,7 +114,7 @@ const Header = () => {
                       >
                         Donate
                       </Link>
-                    </h2>
+                    </button>
                   </li>
                   <li>
                     {session?.status === "authenticated" ? (
@@ -275,6 +275,19 @@ const Header = () => {
                         }
                       >
                         Contact
+                      </Link>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2 className="text-[17px]">
+                      {" "}
+                      <Link
+                        href="/api/donate"
+                        className={
+                          path === "/api/donate" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        Donate
                       </Link>
                     </h2>
                   </li>
