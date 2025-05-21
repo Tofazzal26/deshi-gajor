@@ -6,7 +6,7 @@ Deshi Gajor is a review-based platform where users can share real employee exper
 
 ## Live --> [DeshiGajor](https://deshi-gajor.vercel.app)
 
-![Orfarm Grocery Image](https://i.ibb.co/FbBtbpqj/Deshi-Gajor.png)
+![DeshiGajor](https://i.ibb.co/FbBtbpqj/Deshi-Gajor.png)
 
 ## Installation Instructions
 
