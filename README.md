@@ -60,16 +60,6 @@ Start the server
 - **Data Management**: Admins can manage users, reviews, and companies easily.
 - **Tech Stack**: Built with modern technologies: Next.js, Tailwind CSS, Mongoose, Stripe, Lucide Icons, React Hook Form, TanStack Table.
 
-## 🚀 Perfect For:
-
-- #### Online grocery startups
-
-- #### Multi-vendor food marketplaces
-
-- #### Small to mid-sized retailers moving online
-
-- #### Projects involving admin/vendor role systems
-
 ## Resources:
 - [NextJs](https://nextjs.org/)
 - [NextAuth](https://next-auth.js.org/)
