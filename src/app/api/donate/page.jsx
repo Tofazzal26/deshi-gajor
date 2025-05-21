@@ -5,7 +5,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_API_KEY);
 const Donate = () => {
   const [amount, setAmount] = useState(0);
   const router = useRouter();
@@ -79,9 +78,7 @@ const Donate = () => {
                   className="lg:py-[15px] py-2 mt-2 mb-4 px-3 w-full lg:px-5 bg-[#f3f4f7] border-[1px] border-[#e5e5e5] outline-none rounded-none"
                 />
               </div>
-              <Elements stripe={stripePromise}>
-                <CheckoutForm amount={amount} />
-              </Elements>
+              <CheckoutForm amount={amount} />
             </div>
           </div>
           <div className="grid mt-10 lg:mt-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
