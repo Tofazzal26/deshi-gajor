@@ -45,7 +45,7 @@ const ReviewDetails = () => {
     e.preventDefault();
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/AddComment/${_id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/AddComment/${_id}`,
         {
           review: isComment,
         }

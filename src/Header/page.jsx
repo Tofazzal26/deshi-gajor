@@ -33,7 +33,7 @@ const Header = () => {
               <div className="navbar-center hidden lg:flex md:flex">
                 <ul className="menu menu-horizontal px-1 items-center md:gap-0 lg:gap-4">
                   <li>
-                    <h2 className="text-[17px]">
+                    <h2 className="text-[15px] lg:text-[17px]">
                       {" "}
                       <Link
                         href="/"
@@ -44,7 +44,7 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <h2 className="text-[17px]">
+                    <h2 className="text-[15px] lg:text-[17px]">
                       <Link
                         href="/api/review"
                         className={
@@ -56,7 +56,7 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <h2 className="text-[17px]">
+                    <h2 className="text-[15px] lg:text-[17px]">
                       <Link
                         href="/api/israel"
                         className={
@@ -68,7 +68,7 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <h2 className="text-[17px]">
+                    <h2 className="text-[15px] lg:text-[17px]">
                       {" "}
                       <Link
                         href="/api/blog"
@@ -79,7 +79,7 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <h2 className="text-[17px]">
+                    <h2 className="text-[15px] lg:text-[17px]">
                       {" "}
                       <Link
                         href="/api/about"
@@ -92,7 +92,7 @@ const Header = () => {
                     </h2>
                   </li>
                   <li>
-                    <h2 className="text-[17px]">
+                    <h2 className="text-[15px] lg:text-[17px]">
                       {" "}
                       <Link
                         href="/api/contact"
@@ -101,6 +101,18 @@ const Header = () => {
                         }
                       >
                         Contact
+                      </Link>
+                    </h2>
+                  </li>
+                  <li>
+                    <h2 className="text-[15px] lg:text-[17px]">
+                      <Link
+                        href="/api/donate"
+                        className={
+                          path === "/api/donate" ? "text-[#ffb25a]" : ""
+                        }
+                      >
+                        Donate
                       </Link>
                     </h2>
                   </li>
@@ -135,7 +147,7 @@ const Header = () => {
                           </li>
                           <li>
                             <Link
-                              href="/api/dashboard/MyProfile"
+                              href="/dashboard/MyProfile"
                               className="text-sm text-gray-600"
                             >
                               My Profile
@@ -154,7 +166,7 @@ const Header = () => {
                     ) : session?.status === "loading" ? (
                       <div className="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-[#ffb25a]"></div>
                     ) : (
-                      <button className="bg-[#074c3e] text-[17px] px-5 py-2 rounded-full">
+                      <button className="bg-[#074c3e] text-[15px] lg:text-[17px] px-5 py-2 rounded-full">
                         <Link
                           href="/api/login"
                           className={
@@ -271,9 +283,9 @@ const Header = () => {
                       {" "}
                       {session?.status === "authenticated" ? (
                         <Link
-                          href="/api/dashboard/MyProfile"
+                          href="/dashboard/MyProfile"
                           className={
-                            path === "/api/dashboard/MyProfile"
+                            path === "/dashboard/MyProfile"
                               ? "text-[#ffb25a]"
                               : ""
                           }
