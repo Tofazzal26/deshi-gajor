@@ -18,12 +18,14 @@ const ReviewCard = ({ item }) => {
           </div>
           <div>
             <button
-              className={` ${
+              className={`${
                 status === "Nagative"
                   ? "bg-[#ffe0da] text-red-500"
+                  : status === "Positive"
+                  ? "bg-[#e3fcf7] text-[#074c3e]"
                   : status === "Mixed"
                   ? "bg-[#fef9c3] text-[#854d2b]"
-                  : "bg-[#e3fcf7] text-[#074c3e]"
+                  : ""
               } lg:px-5 px-3 py-[3px] lg:py-[5px] lg:text-lg text-base`}
             >
               {status}

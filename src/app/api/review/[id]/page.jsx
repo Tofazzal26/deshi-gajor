@@ -89,12 +89,14 @@ const ReviewDetails = () => {
                     </div>
                     <div>
                       <button
-                        className={` ${
-                          status === "Negative"
+                        className={`${
+                          status === "Nagative"
                             ? "bg-[#ffe0da] text-red-500"
+                            : status === "Positive"
+                            ? "bg-[#e3fcf7] text-[#074c3e]"
                             : status === "Mixed"
-                            ? "bg-[#fef9c3] text-[#854d0e]"
-                            : "bg-[#e3fcf7] text-[#074c3e]"
+                            ? "bg-[#fef9c3] text-[#854d2b]"
+                            : ""
                         } lg:px-5 px-3 py-[3px] lg:py-[5px] lg:text-lg text-base`}
                       >
                         {status}
